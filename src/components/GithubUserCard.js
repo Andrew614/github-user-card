@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GithubFollowersList from './GithubFollowersList'
+import './GithubUserCard.css'
 
 class GithubUserCard extends Component {
     constructor(props) {
@@ -37,20 +38,24 @@ class GithubUserCard extends Component {
                 {this.state.isLoading ? <div>LOADING</div> :
                     <div className='container'>
                         <h1>Github User Card</h1>
-                        <section className='card'>
-                            <img className='card__image' src={this.state.avatar} alt={`${this.state.name}'s avatar`} style={{ height: 300 }} />
-                            <h3 className='card__title'>{this.state.name}</h3>
-                            <p className='card__bio'>{this.state.bio === null ?
-                                'This user is too lazy to write a bio'
-                                : this.state.bio}</p>
-                            <ul className='card__list'>
-                                <li className='card__list-info'>Username: {this.state.username}</li>
-                                <li className='card__list-info'>Following: {this.state.numFollowing}</li>
-                                <li className='card__list-info'>Followers: {this.state.numFollowers}</li>
-                            </ul>
+                        <section className='user-card'>
+                            <div className='user-card__bio'>
+                                <h3 className='user-card__title'>{this.state.name}</h3>
+                                <h5 className='user-card__bio'>{this.state.bio === null ?
+                                    'This user is too lazy to write a bio'
+                                    : this.state.bio}</h5>
+                            </div>
+                            <div className='user-card__info'>
+                                <img className='user-card__image' src={this.state.avatar} alt={`${this.state.name}'s avatar`} />
+                                <ul className='user-card__list'>
+                                    <li className='user-card__list-info'>Username: {this.state.username}</li>
+                                    <li className='user-card__list-info stats'>Following: {this.state.numFollowing}</li>
+                                    <li className='user-card__list-info stats'>Followers: {this.state.numFollowers}</li>
+                                </ul>
+                            </div>
                         </section>
                         <section className='followers'>
-                            <h3 className='followers__title'>{this.state.name}'s followers</h3>
+                            <h2 className='followers__title'>{this.state.name}'s followers</h2>
                             <GithubFollowersList followersUrl={this.state.followersUrl} />
                         </section>
                     </div>

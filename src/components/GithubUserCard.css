@@ -1,0 +1,64 @@
+img {
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.followers__title {
+    color: white;
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.stats {
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+    padding: 3rem 10rem;
+}
+
+.user-card {
+    background-color: #D3D3D3;
+    border: 1px solid #808080;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+}
+
+.user-card__bio {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.user-card__title {
+    margin-bottom: .5rem;
+}
+
+.user-card__info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-card__list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+    width: 60%;
+}
+
+.user-card__image {
+    width: 40%;
+}
