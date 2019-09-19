@@ -52,6 +52,23 @@ class GithubUserCard extends Component {
     }
 
     render() {
+        if (this.state.name === undefined) {
+            return (
+                <div className='container'>
+                    <section className='header'>
+                        <h1>Github User Card</h1>
+                        <label htmlFor="query">Search Github User</label>
+                        <input type="text"
+                            id='query'
+                            placeholder='github username'
+                            onChange={this.handleChange} />
+                        <button className='header__button' onClick={this.handleClick}>search</button>
+                    </section>
+                    <h2 className='message'>That is not a valid github user</h2>
+                </div>
+            )
+        }
+
         return (
             <div className='GithubUserCard'>
                 {this.state.isLoading ? <div>LOADING</div> :

@@ -74,6 +74,15 @@ ul {
   padding: .25em;
 }
 
+.message {
+  background-color: orangered;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 4rem;
+  text-align: center;
+  width: 50%;
+}
+
 .stats {
   align-items: center;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
