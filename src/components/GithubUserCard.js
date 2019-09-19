@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import GithubFollowersList from './GithubFollowersList'
-import './GithubUserCard.css'
 
 class GithubUserCard extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            query: 'andrew614',
             name: '',
             avatar: '',
             username: '',
@@ -17,8 +17,16 @@ class GithubUserCard extends Component {
         }
     }
 
-    async componentDidMount() {
-        const data = await fetch(`https://api.github.com/users/${this.props.username}`)
+    componentDidMount() {
+        this.fetchUserInfo()
+    }
+
+    async fetchUserInfo() {
+        this.setState({
+            isLoading: true
+        })
+
+        const data = await fetch(`https://api.github.com/users/${this.state.query}`)
             .then(response => response.json())
         this.setState({
             name: data.name,
@@ -32,12 +40,31 @@ class GithubUserCard extends Component {
         })
     }
 
+    handleChange = (event) => {
+        this.setState({
+            query: event.target.value
+        })
+    }
+
+    handleClick = (event) => {
+        event.preventDefault()
+        this.fetchUserInfo();
+    }
+
     render() {
         return (
             <div className='GithubUserCard'>
                 {this.state.isLoading ? <div>LOADING</div> :
                     <div className='container'>
-                        <h1>Github User Card</h1>
+                        <section className='header'>
+                            <h1>Github User Card</h1>
+                            <label htmlFor="query">Search Github User</label>
+                            <input type="text"
+                                id='query'
+                                placeholder='github username'
+                                onChange={this.handleChange} />
+                            <button className='header__button' onClick={this.handleClick}>search</button>
+                        </section>
                         <section className='user-card'>
                             <div className='user-card__bio'>
                                 <h3 className='user-card__title'>{this.state.name}</h3>

@@ -1,6 +1,5 @@
 import React from 'react';
 import GithubUserCard from './GithubUserCard'
-import './App.css';
 
 function App() {
   return (

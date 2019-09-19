@@ -1,5 +1,4 @@
 import React from 'react'
-import './GithubFollower.css'
 
 const GithubFollower = ({ avatar, username }) => {
 

@@ -9,9 +9,156 @@ html {
 }
 
 body {
-  /* background-image: linear-gradient(to bottom, white, #ce8a88) */
-  background:url('https://cdn.pixabay.com/photo/2018/10/23/03/10/abstract-3766886_1280.jpg');
-  background-repeat: repeat-y;
+  /* background-image: linear-gradient(to top, white, #43B3E0); */
+  background:url('https://cdn.pixabay.com/photo/2016/03/26/05/32/fractal-1280107_1280.jpg');
   background-size: contain;
 }
 
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card {
+  background-color: #D3D3D3;
+  border: 1px solid #808080;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.card__title {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card__image {
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+
+.followers__title {
+  color: white;
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.GithubFollowersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header {
+  color: white;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.header button {
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: .25em;
+}
+
+.header input {
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: .5rem;
+  padding: .25em;
+}
+
+.stats {
+  align-items: center;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-card {
+  background-color: #D3D3D3;
+  border: 1px solid #808080;
+  border-radius: 2rem;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 90%;
+}
+
+.user-card__bio {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.user-card__title {
+  margin-bottom: .5rem;
+}
+
+.user-card__image {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.user-card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-card__list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 440px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media (min-width: 572px) {
+
+  .user-card__image {
+    margin: 0 auto;
+    width: 40%;
+  }
+
+  .user-card__info {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stats {
+    height: 40%;
+    width: 70%;
+  }
+
+  .user-card__list {
+    justify-content: space-around;
+    padding: 2rem;
+    width: 60%;
+  }
+}
+
+@media (min-width: 860px) {
+  .card {
+    width: 27%;
+  }
+}

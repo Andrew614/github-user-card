@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import GithubFollower from './GithubFollower'
-import './GithubFollowersList.css'
 
 class GithubFollowersList extends Component {
     constructor(props) {
